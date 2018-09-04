@@ -1,0 +1,22 @@
+{% extends "Base1.html" %}
+
+
+{% block MainBlock %}
+
+
+{% for ticker in wl %}
+	<h1>{{ ticker }}</h1>
+{% endfor %}
+
+	<div >
+	    <form method="GET" >
+	        <p style = "position:absolute; bottom:20px;">
+	            <label>Watchlist</label>
+	            <input size = '126' type="text" name="watchlist_tickers">
+	            <button  type="submit" >Submit</button>
+	        </p>
+	         
+	    </form>
+
+	</div>
+{% endblock %}

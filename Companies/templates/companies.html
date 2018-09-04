@@ -1,0 +1,102 @@
+{% extends "Base1.html" %}
+{% load static %}
+
+
+
+
+{% block NavBarBlock %}
+<a href = '/Companies/Watchlist/'><img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/OOjs_UI_icon_watchlist-ltr.svg/2000px-OOjs_UI_icon_watchlist-ltr.svg.png" height="25" width="25"></a>
+{% endblock %}
+
+
+
+{% block MainBlock %}
+
+
+{% if Profile_objects %}
+
+	<div class = 'row'>
+		<div class = 'column' style = "width:60%;">
+		{% for profile in Profile_objects %}
+		<a href = '/Companies/{{profile.id}}/'><img src = "{{profile.logo}}" height="150" width="150"></a>
+		{% endfor %}
+		</div>
+
+		<div class = "column" style = "width:40%; background-color: lightblue;">
+			<h1 align = 'center'>Index's</h1>
+
+
+
+			<table border="1" style = " width:100%;border: 1px solid black; text-align: center; color: black; background-color:white;">
+			  	<tr>
+			  		<th></th>
+			  		{% for index in indexnames %}
+			  		<th>{{index}}</th>
+			  		{% endfor %}
+			  	</tr>
+	
+			  	<tr>
+			  		<td>Close</td>
+			  	{% for item in close %}
+			  		<td>{{item}}</td>
+			  	{% endfor %}
+			  	</tr>
+
+			  	<tr>
+			  		<td>Point Change</td>
+			  	{% for item in pointchange %}
+			  		{% if item < 0 %}
+			  			<td style = 'background-color:red;'>{{item}}</td>
+			  		{% else %}
+			  			<td style = 'background-color:green;'>{{item}}</td>
+			  		{% endif %}
+			  	{% endfor %}
+			  	</tr>
+
+			  	<tr>
+			  		<td>Percent Change</td>
+			  	{% for item in pctchange %}
+			  		{% if item < 0 %}
+			  			<td style = 'background-color:red;'>{{item}}%</td>
+			  		{% else %}
+			  			<td style = 'background-color:green;'>{{item}}%</td>
+			  		{% endif %}
+			  	{% endfor %}
+			  	</tr>
+		  
+			</table>
+
+
+			<h1 align = 'center'>News</h1>
+
+			<table border="1" style = " width:100%;border: 1px solid black; text-align: center; color: black; background-color:white;">
+				
+				{% for item in news %}
+				<tr>
+				<td>{{item}}</td>
+				<tr>
+				{% endfor %}
+				
+			</table>
+
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+{% else %}
+	<h3>No Profiles to Display- Check if Database is empty?</h3>
+{% endif %}
+
+{% endblock %}
+
+
+
+
+

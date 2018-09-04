@@ -1,0 +1,65 @@
+
+{% extends "Base1.html" %}
+
+{% load static %}
+
+{% block NavBarBlock %}
+
+
+   <li class='has-sub'><a href='#'><span>Products</span></a>
+      <ul>
+         <li>
+         	<form action  = '/Cryptos/Correlate' method = "get">
+         	<a>
+         	<button name="param" type="submit" value = 'michaelsands' style = "padding: 0; border: none; background: none;">Correlate</button>
+         	</a>
+         	</form>
+     	 </li>
+
+
+	 <li>
+ 	<form action  = '/Cryptos/BBStrat' method = "get">
+ 	<a>
+ 	<button name="param" type="submit" value = 'michaelsands' style = "padding: 0; border: none; background: none; ">Bollinger Strategy</button>
+ 	</a>
+ 	</form>
+	 </li>
+
+
+   <!-- <li class='has-sub'><a href='#'><span>About</span></a>
+      <ul>
+         <li><a href='#'><span>Company</span></a></li>
+         <li class='last'><a href='#'><span>Contact</span></a></li>
+      </ul>
+   </li> -->
+
+		</ul>
+</div>
+
+</body>
+<html>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+{% block MainBlock %}
+<h1>Crypto Root</h1>
+
+
+	
+
+</body>
+
+</html>
+
+{% endblock %} -->
+
+
